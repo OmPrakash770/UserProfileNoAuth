@@ -17,6 +17,8 @@ const corsOptions = {
     origin: ['http://localhost:3001', 'http://localhost:80'] // Whitelist the domains you want to allow
 };
 
+
+
 const crypto = require('crypto');
 const secretKey = crypto.randomBytes(64).toString('hex');
 console.log(secretKey);
@@ -37,7 +39,11 @@ app.use(session({
     secret: 'secretKey', // Replace with a secure secret key
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Set to true if using HTTPS
+    cookie: {
+        secure: false, // Set this to true for HTTPS only
+        httpOnly: true,
+        sameSite: 'Lax' // Needed for cross-site access
+    }
   }));
 
 // Routes
