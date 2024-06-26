@@ -546,32 +546,6 @@ const getUserProfileByPhoneno = (req, res, next) => {
 // };
 
 
-
-// const deleteUser = (req, res, next) => {
-//   const { id } = req.params;
-//   console.log("Request Body:", req.params);
-
-//   const checkQuery = 'SELECT * FROM users WHERE id = ?';
-//   db.query(checkQuery, [id], (err, results) => {
-//       if (err) {
-//           return next(err);
-//       }
-
-//       if (results.length === 0) {
-//           return res.status(404).json({ msg: 'User not found' });
-//       }
-
-//       const deleteQuery = 'DELETE FROM users WHERE id = ?';
-//       db.query(deleteQuery, [id], (err, result) => {
-//           if (err) {
-//               return next(err);
-//           }
-//           res.status(200).json({ msg: 'User deleted successfully' });
-//       });
-//   });
-// };
-
-
 const deleteUser = (req, res, next) => {
     const { username } = req.params;
 
