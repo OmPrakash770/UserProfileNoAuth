@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 const session = require('express-session');
 
+// Check
 const app = express();
 const port = 3001;
 
